@@ -484,6 +484,19 @@
   display: none;
 }
 
+.logoHeader {
+  width: 100%;
+  height: 60px;
+  position: relative;
+  bottom: 10px;
+}
+
+.logoFooter {
+  width: 70%;
+  height: 150px;
+  position: relative;
+}
+
 }
 
 /* Large Mobile :480px. */
