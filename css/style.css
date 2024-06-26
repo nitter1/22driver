@@ -478,7 +478,6 @@ div#preloader {
   padding: 10px 0px;
 }
 
-
 /*------------------------------
   3. About Area
 --------------------------------*/
@@ -550,6 +549,15 @@ div#preloader {
 .single-services>p {
   color: #333;
   font-size: 14px;
+}
+
+.badgeGooglePlay {
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.badgeGooglePlay:hover {
+  transform: scale(1.1);
 }
 
 /*----------------------------------------

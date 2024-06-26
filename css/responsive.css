@@ -497,6 +497,11 @@
   position: relative;
 }
 
+.badgeGooglePlay {
+  cursor: pointer;
+  width: 70%;
+}
+
 }
 
 /* Large Mobile :480px. */
