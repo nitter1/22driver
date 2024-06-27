@@ -21,7 +21,7 @@ try {
     $mail->Host       = 'smtp.titan.email';                       // Definir o servidor SMTP para envio
     $mail->SMTPAuth   = true;                                   // Habilitar autenticação SMTP
     $mail->Username   = 'contato@22driver.com.br';        // Nome de usuário SMTP
-    $mail->Password   = 'nbtn vaxk izsl qxpu';                  // Senha SMTP
+    $mail->Password   = 'driver@2024';                  // Senha SMTP
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Habilitar criptografia TLS implícita
     $mail->Port       = 587;                                    // Porta TCP para conectar; use 587 se você tiver configurado `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
@@ -35,7 +35,7 @@ try {
     $mail->Body    = "Nome: $nome<br>Email: $email<br>Mensagem: $mensagem";
 
     $mail->send();
-    echo '<b>Mensagem enviada com sucesso</b>';
+    echo 'Mensagem enviada com sucesso';
 } catch (Exception $e) {
     echo 'Não foi possível enviar a mensagem. Erro do Mailer: ' . $mail->ErrorInfo;
 }

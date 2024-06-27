@@ -472,12 +472,12 @@
           </div>
           <!-- End Google Map -->
 
-         <!-- Start contact -->
+      <!-- Start contact -->
 <div class="col-md-6 col-sm-6 col-xs-12">
   <div class="form contact-form">
     <div id="sendmessage">Sua mensagem foi enviada. Obrigado!</div>
     <div id="errormessage">Houve um erro ao tentar enviar a mensagem. Tente novamente mais tarde.</div>
-    <form id="contactForm" action="contact.php" method="post" role="form" class="contactForm">
+    <form id="contactForm" method="post" role="form" class="contactForm">
       <div class="form-group">
         <input type="text" name="name" class="form-control" id="name" placeholder="Seu Nome"
           data-rule="minlen:4" data-msg="Por favor insira pelo menos 4 caracteres" />
@@ -490,7 +490,7 @@
       </div>
       <div class="form-group">
         <input type="text" class="form-control" name="subject" id="subject" placeholder="Assunto"
-          data-rule="minlen:4" data-msg="Por favor insira pelo menos 8 caracteres de assunto" />
+          data-rule="minlen:8" data-msg="Por favor insira pelo menos 8 caracteres de assunto" />
         <div class="validation"></div>
       </div>
       <div class="form-group">
@@ -498,7 +498,7 @@
           data-msg="Digite a sua mensagem" placeholder="Digite a sua mensagem"></textarea>
         <div class="validation"></div>
       </div>
-      <div class="text-center"><button type="submit">Enviar Mensagem</button></div>
+      <div class="text-center"><button type="submit" id="submitForm">Enviar Mensagem</button></div>
     </form>
   </div>
 </div>
@@ -590,9 +590,6 @@
   <script src="lib/appear/jquery.appear.js"></script>
   <script src="lib/isotope/isotope.pkgd.min.js"></script>
 
-  <!-- Contact Form JavaScript File 
-<script src="js/mailer.js"></script>-->
-
   <!-- JS Whatsapp Button --> 
   <link rel="stylesheet"
     href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
@@ -601,12 +598,28 @@
     <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg">
   </a>
 
-  <!-- <script>window.rwbp={email:'contato@22driver.com.br',phone:'5522981702222',message:'Olá, seja bem vindo a 22 Driver, clique para solicitar sua viagem!',lang:'pt-BR'}</script>
-  <script defer async src='https://duz4dqsaqembt.cloudfront.net/client/whats.js'></script> -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#contactForm').on('submit', function(e) {
+      e.preventDefault(); // Impede o envio do formulário padrão
 
-
-  
-
+      $.ajax({
+        url: 'php/contactform.php',
+        type: 'POST',
+        data: $(this).serialize(),
+        success: function(response) {
+          $('#sendmessage').show();
+          $('#errormessage').hide();
+        },
+        error: function() {
+          $('#sendmessage').hide();
+          $('#errormessage').show();
+        }
+      });
+    });
+  });
+</script>
 
   <script src="js/main.js"></script>
 </body>
