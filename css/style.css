@@ -1810,24 +1810,7 @@ div#preloader {
   color: #3EC1D5;
 }
 
-.footer-icons ul li {
-  display: inline-block;
-  margin-top: 3em;
-}
 
-.footer-icons ul li a {
-  border: 1px solid #444;
-  color: #444;
-  display: block;
-  font-size: 16px;
-  height: 40px;
-  line-height: 38px;
-  margin-right: 5px;
-  text-align: center;
-  width: 40px;
-  border-radius: 50%;
-
-}
 
 .flicker-img>a {
   float: left;
@@ -1837,7 +1820,23 @@ div#preloader {
 
 .footer-icons {
   margin-top: 30px;
-margin-left: 30px;
+  margin-left: 30px;
+
+}
+
+.footer-icons ul li {
+  display: inline-block;
+  margin-top: 3em;
+}
+
+.footer-icons ul li a {
+  display: block;
+  width: 60px; /* Aumentando o tamanho dos ícones */
+  height: 60px; /* Aumentando o tamanho dos ícones */
+  line-height: 60px; /* Ajustando a linha para centralizar o ícone */
+  text-align: center;
+  border-radius: 50%;
+
 }
 
 .footer-contacts p span {
@@ -1854,7 +1853,7 @@ margin-left: 30px;
   overflow: hidden;
 }
 
-.popular-tag ul li a:hover, .footer-icons ul li a:hover {
+.popular-tag ul li a:hover {
   background: #3EC1D5;
   border: 1px solid #3EC1D5;
   color: #fff;
@@ -1921,6 +1920,16 @@ margin-left: 30px;
   width: 40%;
   height: 150px;
   position: relative;
+}
+
+.redes {
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+
+  }
+
+.redes:hover {
+  transform: scale(1.1);
 }
 
 /*----------------------------------------*/
