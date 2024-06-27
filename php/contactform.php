@@ -9,25 +9,25 @@ use PHPMailer\PHPMailer\Exception;
 
 $mail = new PHPMailer(true);
 
-$nome       = $_POST['nome'];
-$assunto    = $_POST['assunto'];
+$nome       = $_POST['name'];
+$assunto    = $_POST['subject'];
 $email      = $_POST['email'];
-$mensagem   = $_POST['mensagem'];
+$mensagem   = $_POST['message'];
 
 try {
     // Configurações do servidor
     $mail->isSMTP();                                            // Enviar usando SMTP
     $mail->CharSet    = 'UTF-8';                                // Definir conjunto de caracteres da mensagem
-    $mail->Host       = 'smtp.gmail.com';                       // Definir o servidor SMTP para envio
+    $mail->Host       = 'smtp.titan.email';                       // Definir o servidor SMTP para envio
     $mail->SMTPAuth   = true;                                   // Habilitar autenticação SMTP
-    $mail->Username   = 'radiodivinaldigital@gmail.com';        // Nome de usuário SMTP
+    $mail->Username   = 'contato@22driver.com.br';        // Nome de usuário SMTP
     $mail->Password   = 'nbtn vaxk izsl qxpu';                  // Senha SMTP
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Habilitar criptografia TLS implícita
     $mail->Port       = 587;                                    // Porta TCP para conectar; use 587 se você tiver configurado `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     // Destinatários
-    $mail->setFrom('radiodivinaldigital@gmail.com', 'Divinal Digital');
-    $mail->addAddress('radiodivinaldigital@gmail.com');
+    $mail->setFrom('contato@22driver.com.br', '22Driver');
+    $mail->addAddress('contato@22driver.com.br');
 
     // Conteúdo
     $mail->isHTML(true); // Definir formato de email para HTML
