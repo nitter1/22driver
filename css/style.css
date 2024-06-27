@@ -1794,7 +1794,6 @@ div#preloader {
 
 .footer-logo {
   padding-bottom: 20px;
-
 }
 
 .footer-logo h2 {
@@ -1819,7 +1818,8 @@ div#preloader {
 }
 
 .footer-icons {
-
+margin-bottom: 30px;
+margin-left: 30px;
 }
 
 .footer-icons ul li {
