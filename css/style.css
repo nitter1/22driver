@@ -1819,8 +1819,6 @@ div#preloader {
 }
 
 .footer-icons {
-  margin-top: 30px;
-  margin-left: 30px;
 
 }
 
@@ -1916,7 +1914,7 @@ div#preloader {
 }
 
 .logoFooter {
-  width: 40%;
+  width: auto;
   height: 150px;
   position: relative;
 }
