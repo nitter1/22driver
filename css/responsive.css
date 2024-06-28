@@ -525,4 +525,10 @@
   .tab-menu ul.nav li a {
     padding: 8px 20px;
   }
+  .logoHeader {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    bottom: 7px;
+  }
 }
