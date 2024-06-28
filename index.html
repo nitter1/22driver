@@ -37,6 +37,29 @@
 
   <!-- Responsive Stylesheet File -->
   <link href="css/responsive.css" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#contactForm').on('submit', function(e) {
+        e.preventDefault(); // Impede o envio do formulário padrão
+  
+        $.ajax({
+          url: 'php/contactform.php',
+          type: 'POST',
+          data: $(this).serialize(),
+          success: function(response) {
+            $('#sendmessage').show();
+            $('#errormessage').hide();
+          },
+          error: function() {
+            $('#sendmessage').hide();
+            $('#errormessage').show();
+          }
+        });
+      });
+    });
+  </script>
 </head>
 
 <body data-spy="scroll" data-target="#navbar-example">
@@ -597,29 +620,6 @@
     href="https://api.whatsapp.com/send/?phone=5522981702222&text=Oi%2C+gostaria+de+falar+com+um+atendente+do+22DRIVER&type=phone_number&app_absent=0">
     <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg">
   </a>
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-  $(document).ready(function() {
-    $('#contactForm').on('submit', function(e) {
-      e.preventDefault(); // Impede o envio do formulário padrão
-
-      $.ajax({
-        url: 'php/contactform.php',
-        type: 'POST',
-        data: $(this).serialize(),
-        success: function(response) {
-          $('#sendmessage').show();
-          $('#errormessage').hide();
-        },
-        error: function() {
-          $('#sendmessage').hide();
-          $('#errormessage').show();
-        }
-      });
-    });
-  });
-</script>
 
   <script src="js/main.js"></script>
 </body>
